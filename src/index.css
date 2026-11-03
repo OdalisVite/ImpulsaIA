@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans bg-cream-50 text-navy-800 antialiased;
+  }
+  .dark body {
+    @apply bg-navy-950 text-cream-100;
+  }
+  ::selection {
+    @apply bg-lilac-500/30;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply max-w-7xl mx-auto px-5 sm:px-8;
+  }
+  .card {
+    @apply rounded-4xl bg-white shadow-soft border border-navy-100/60;
+  }
+  .dark .card {
+    @apply bg-navy-800 border-navy-700/60 shadow-none;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-navy-700 text-white px-6 py-3 hover:bg-navy-600 active:scale-[0.97];
+  }
+  .dark .btn-primary {
+    @apply bg-lilac-600 hover:bg-lilac-500 text-white;
+  }
+  .btn-ghost {
+    @apply btn bg-white text-navy-700 px-6 py-3 border border-navy-200 hover:border-navy-300 active:scale-[0.97];
+  }
+  .dark .btn-ghost {
+    @apply bg-navy-800 text-cream-100 border-navy-600 hover:border-lilac-500;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium;
+  }
+  .input-field {
+    @apply w-full rounded-2xl border border-navy-200 bg-white px-4 py-3 text-navy-800 placeholder:text-navy-300 focus:outline-none focus:ring-2 focus:ring-lilac-500/50 focus:border-lilac-400 transition;
+  }
+  .dark .input-field {
+    @apply bg-navy-800 border-navy-600 text-cream-100 placeholder:text-navy-400;
+  }
+  .section-title {
+    @apply font-display font-extrabold tracking-tight text-navy-900;
+  }
+  .dark .section-title {
+    @apply text-cream-50;
+  }
+}
